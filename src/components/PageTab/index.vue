@@ -23,7 +23,7 @@
 import Zhiling from '../Detail/Zhiling/index.vue';
 import AboutVue from '../Detail/AboutVue/index.vue';
 import LifeCycle from '../Detail/LifeCycle/index.vue';
-
+import { styleConfig } from './../../config/index.js';
 
 
   export default {
@@ -49,22 +49,32 @@ import LifeCycle from '../Detail/LifeCycle/index.vue';
                 title: '生命周期',
                 comp: 'lifecycle',
             },
+            {
+                title: '模板语法',
+                comp: 'template',
+            },
         ],
-        minH: window.innerHeight - 160,
+        minH: window.innerHeight - 60 - styleConfig.footerHeight,
       };
     }
   };
 </script>
-<style scoped>
+<style>
 #page-tab-wrap{
     margin-top: 60px;
 }
-#page-tab-wrap .el-tabs el-tabs--left .el-tabs__header.is-left{
+#page-tab-wrap .el-tabs .el-tabs__header.is-left{
     position: fixed;
     left: 0;
     top: 60px;
 }
 #page-tab-wrap .el-tabs__content{
-    margin-left: 90px;
+    margin-left: 160px;
+}
+.el-tabs__nav.is-left{
+    width: 150px;
+}
+#page-tab-wrap .el-tabs--left .el-tabs__item.is-left{
+    text-align: center;
 }
 </style>

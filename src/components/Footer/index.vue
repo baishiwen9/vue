@@ -1,18 +1,25 @@
 <template>
-    <div id="page-footer" v-bind:class="{fixedMode: isFixed}">
-        <p class="desc">vue个人学习笔记，知识点记录，demo演示</p>
+    <div 
+        id="page-footer" 
+        v-bind:class="{fixedMode: isFixed}"
+        v-bind:style="{height: footerHeight + 'px'}"
+    >
+        <p class="desc">VUE框架个人学习笔记，知识点记录，demo演示</p>
         <p class="tiem">当前时间: {{ time }}</p>
+        <p class="author">author@流川</p>
     </div>
 </template>
 
 
 <script>
+import { styleConfig } from '../../config/index.js';
 export default {
     name: 'Footer',
     data() {
         return {
             time: getTime(),
             isFixed: getPosition(),
+            footerHeight: styleConfig.footerHeight,
         }
     }
 }
@@ -46,7 +53,7 @@ function format(num) {
 <style scoped>
 #page-footer{
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     background: rgb(84, 92, 100);
     display: flex;
     justify-content: center;
@@ -54,12 +61,11 @@ function format(num) {
     flex-direction: column;
     color: #fff;
     font-size: 16px;
+    position: absolute;
 }
-/* #page-footer.fixedMode{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-} */
+#page-footer p{
+    margin-bottom: 10px;
+}
 p{
     margin-block-start: 0em;
     margin-block-end: 0em;
