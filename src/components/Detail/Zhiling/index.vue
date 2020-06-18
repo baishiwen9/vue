@@ -1,3 +1,4 @@
+
 <template>
   <div class="content-wrap">
     <h3 class="title">
@@ -154,7 +155,8 @@
 </template>
 
 <script>
-import Code from '../Code/index.vue';
+import Code from '../../Code/index.vue';
+import './../../comm/articleTemplate.css';
 export default {
   name: 'Zhiling',
   components: {
@@ -165,50 +167,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-h3 {
-  margin: 30px 0 0;
-}
-ul {
-  /* padding: 0; */
-}
-li {
-  /* display: inline-block; */
-  /* margin: 0 10px; */
-  text-align: left;
-}
-a {
-  color: #42b983;
-}
-p{
-  text-align: left;
-  line-height: 1.2;
-}
-.content-wrap{
-  padding: 16px;
-  box-sizing: border-box;
-}
-.title{
-  margin: 30px 0;
-}
-.title span{
-  box-shadow: 0px 4px 0px red;
-}
-.item-title{
-  position: relative;
-  font-size: 18px;
-  font-weight: 500;
-}
-.item-title::after{
-    content: "";
-    display: inline-block;
-    width: 100px;
-    height: 4px;
-    background: red;
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    border-radius: 4px;
-}
-</style>

@@ -1,0 +1,58 @@
+h3 {
+    margin: 30px 0 0;
+  }
+  li {
+    text-align: left;
+  }
+p{
+    text-align: left;
+    line-height: 1.2;
+  }
+  .content-wrap{
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  .title{
+    margin: 30px 0;
+  }
+  .title span{
+    box-shadow: 0px 4px 0px red;
+  }
+  .item-title{
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .item-title::after{
+      content: "";
+      display: inline-block;
+      width: 100px;
+      height: 4px;
+      background: red;
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      border-radius: 4px;
+  }
+
+  .code-desc{
+    text-align: left;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #f8f8f8;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .code-desc.mark{
+    color: red;
+  }
+
+  .img-wrap{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .article-img{
+    width: 50%;
+    height: 100%;
+  }
