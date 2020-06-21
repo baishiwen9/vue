@@ -10,25 +10,31 @@
             active-text-color="#ffd04b">
             <el-menu-item index="0" disabled>
               <div class="blog">
-                  <img class="logo" src="./../../assets/logo.jpg"/>
+                  <Logo />
                   <span class="blog-title">VUE学习笔记</span>
               </div>
             </el-menu-item>
-            <el-menu-item index="1">学习中心</el-menu-item>
-            <el-submenu index="2">
+            <el-menu-item index="1"><router-link to="/home">学习中心</router-link></el-menu-item>
+            <el-menu-item index="2"><router-link to="/problems">vue面试题</router-link></el-menu-item>
+            <!-- <el-submenu index="2">
                 <template slot="title">笔记中心</template>
                 <el-menu-item index="2-1">选项1</el-menu-item>
                 <el-menu-item index="2-2">选项2</el-menu-item>
                 <el-menu-item index="2-3">选项3</el-menu-item>
             </el-submenu>
             <el-menu-item index="3">学习计划</el-menu-item>
-            <el-menu-item index="4">个人计划</el-menu-item>
+            <el-menu-item index="4">个人计划</el-menu-item> -->
         </el-menu>
     </div>
 </template>
 
 <script>
+  import Logo from './logo.vue';
+
   export default {
+    components: {
+      Logo,
+    },
     data() {
       return {
         activeIndex: '1',
@@ -41,7 +47,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="less" scoped>
 .el-menu-nav{
   position: fixed;
   left: 0;
@@ -61,12 +67,19 @@
   justify-content: center;
   align-items: center;
 }
-.logo{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
+
 .blog-title{
   margin-left: 12px;
+}
+#page-header{
+  li.el-menu-item{
+    a{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      font-size: 16px;
+    }
+  }
 }
 </style>

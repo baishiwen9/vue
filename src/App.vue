@@ -1,40 +1,39 @@
 <template>
   <div id="app">
-    <Header />
-    <PageTab />
-    <!-- <LeftNav /> -->
-    <Footer />
+      <Header />
+      <div class="vue-learning-content">
+          <router-view></router-view>
+      </div>
+      <Footer />
   </div>
 </template>
 
+
 <script>
-import PageTab from './components/PageTab/index.vue';
-// import LeftNav from './components/LeftNav/index.vue';
-import Header from './components/Header/index.vue';
-import Footer from './components/Footer/index.vue';
+  import Header from './components/Header/index';
+  import Footer from './components/Footer/index';
 
-
-
-export default {
-  name: 'App',
-  components: {
-    PageTab,
-    Header,
-    Footer,
+  export default {
+    name: 'app',
+    components: {
+      Header,
+      Footer
+    }
   }
-}
 </script>
 
 <style>
-body{
-  margin: 0;
-  padding: 0;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  html {
+    font-size: 14px;
+    min-width: 1280px;
+  }
+  body {
+    background: #fefefe;
+    height: auto;
+    min-height: 100%;
+  }
+  .vue-learning-content{
+    margin-top: 60px;
+  }
 </style>
+

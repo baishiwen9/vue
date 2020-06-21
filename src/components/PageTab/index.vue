@@ -1,42 +1,56 @@
 <template>
     <div id="page-tab-wrap" v-bind:style="{minHeight: minH + 'px'}">
-        <el-tabs :tab-position="tabPosition">
-            <el-tab-pane 
-                v-for="list in tabList" 
-                v-bind:key="list.tag"
-                label="list.title" 
-            >
-                <div v-if="list.comp === 'Zhiling'">
+        <div v-if="pageType === 'home'">
+            <el-tabs :tab-position="tabPosition">
+                <el-tab-pane label="指令">
                     <Zhiling title="指令模块" />
-                </div>
-                <div v-if="list.comp === 'vue'">
+                </el-tab-pane>
+                <el-tab-pane label="vue实例">
                     <AboutVue title="Vue实例模块" />
-                </div>
-                <div v-if="list.comp === 'lifecycle'">
-                    <LifeCycle title="Vue生命周期" />
-                </div>
-            </el-tab-pane>
-        </el-tabs>
+                </el-tab-pane>
+                <el-tab-pane label="生命周期" >
+                    <LifeCycle title="生命周期" />
+                </el-tab-pane>
+                <el-tab-pane label="模板语法" >
+                </el-tab-pane>
+            </el-tabs>
+        </div>
+
+        <div v-if="pageType === 'problems'">
+            <el-tabs :tab-position="tabPosition">
+                <el-tab-pane label="路由">
+                    <Luyou title="路由" />
+                </el-tab-pane>
+                
+            </el-tabs>
+        </div>
     </div>
 </template>
 <script>
-import Zhiling from '../Detail/Zhiling/index.vue';
-import AboutVue from '../Detail/AboutVue/index.vue';
-import LifeCycle from '../Detail/LifeCycle/index.vue';
+import Zhiling from '../../Page/Home/Detail/Zhiling';
+import AboutVue from '../../Page/Home/Detail/AboutVue';
+import LifeCycle from '../../Page/Home/Detail/LifeCycle';
 import { styleConfig } from './../../config/index.js';
 
 
+import Luyou from '../../Page/Problems/Detail/Luyou';
+
   export default {
     name: 'PageTab',
+    props: {
+        pageType: String,
+    },
     components: {
         Zhiling,
         AboutVue,
         LifeCycle,
+
+        Luyou,
     },
     data() {
       return {
         tabPosition: 'left',
-        tabList: [
+        tabList_home: [
             {
                 title: '指令',
                 comp: 'Zhiling',
@@ -75,6 +89,9 @@ import { styleConfig } from './../../config/index.js';
     width: 150px;
 }
 #page-tab-wrap .el-tabs--left .el-tabs__item.is-left{
+    text-align: center;
+}
+.content-wrap h3.title{
     text-align: center;
 }
 </style>

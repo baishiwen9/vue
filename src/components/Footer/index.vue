@@ -21,6 +21,11 @@ export default {
             isFixed: getPosition(),
             footerHeight: styleConfig.footerHeight,
         }
+    },
+    created() {
+        // setInterval(() => {
+        //     this.time = getTime();
+        // }, 1000);
     }
 }
 
@@ -39,10 +44,11 @@ function getTime() {
     const y = currentTime.getFullYear();
     let m = currentTime.getMonth() + 1;
     let d = currentTime.getDate();
-    let h = currentTime.getHours();
-    let mm = currentTime.getMinutes();
-    let s = currentTime.getSeconds();
-    return `${y}年${format(m)}月${format(d)}日 ${format(h)} : ${ format(mm) } : ${format(s)}`;
+    // let h = currentTime.getHours();
+    // let mm = currentTime.getMinutes();
+    // let s = currentTime.getSeconds();
+    // return `${y}年${format(m)}月${format(d)}日 ${format(h)}:${ format(mm) }:${format(s)}`;
+    return `${y}年${format(m)}月${format(d)}日`;
 }
 
 function format(num) {
@@ -50,7 +56,7 @@ function format(num) {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 #page-footer{
     width: 100%;
     min-height: 100px;

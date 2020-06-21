@@ -15,17 +15,12 @@
         <Code />
     </div>
 
-    
-
-
-    
-
   </div>
 </template>
 
 <script>
-import Code from '../../Code/index.vue';
-import './../../comm/articleTemplate.css';
+import Code from '../../../components/Code/index';
+import '../../../components/comm/articleTemplate.css';
 export default {
   name: 'LifeCycle',
   components: {
